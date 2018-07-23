@@ -1,8 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-console.log(process.env)
-
 module.exports = {
   mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   entry: './src/index.js',
@@ -10,6 +8,12 @@ module.exports = {
     publicPath: '/',
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'vendors'
+    }
   },
   module: {
     rules: [
