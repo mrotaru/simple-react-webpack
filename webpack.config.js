@@ -1,19 +1,20 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   entry: './src/index.js',
   output: {
     publicPath: '/',
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
     splitChunks: {
       chunks: 'all',
-      name: 'vendors'
-    }
+      name: 'vendors',
+    },
   },
   module: {
     rules: [
@@ -21,20 +22,27 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
     }),
   ],
   serve: {
-    content: path.resolve(__dirname, 'dist')
-  }
+    content: path.resolve(__dirname, 'dist'),
+  },
 }

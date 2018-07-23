@@ -5,9 +5,11 @@ import HomePage from './components/HomePage'
 import NotFoundPage from './components/NotFoundPage'
 import { Routes as UsersRoutes } from './modules/users'
 
+import style from './style.css'
+
 const App = () => {
   return (
-    <div>
+    <div style={style}>
       <BrowserRouter>
         <Switch>
           <Route path="/" component={HomePage} exact />
