@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './style.scss'
+import style from './style.scss'
 
 const UserPage = ({
   match: {
@@ -9,7 +9,7 @@ const UserPage = ({
   },
 }) => {
   return (
-    <div class='userDiv'>
+    <div class={style.userDiv}>
       <h1>{`User Page: ${userId}`}</h1>
       <Link to="/users"> >>Go to users page</Link>
     </div>
