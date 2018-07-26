@@ -1,0 +1,8 @@
+{
+  "modulePaths": ["<rootDir>/src"],
+  "moduleNameMapper": {
+    ".scss$": "testSetup.js"
+  },
+  "setupFiles": ["<rootDir>/src/testSetup.js"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
+}
