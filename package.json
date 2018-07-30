@@ -8,7 +8,7 @@
     "test-coverage": "jest --config=.jestrc.json --coverage",
     "test:watch": "jest --config=.jestrc.json -- watch",
     "lint": "eslint ./src",
-    "dev": "webpack-serve",
+    "dev": "webpack-serve --port=3000 --clipboard=false",
     "build": "webpack --mode=production"
   },
   "keywords": [],

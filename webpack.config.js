@@ -41,9 +41,10 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: mode !== 'production'
-              ? 'style-loader'
-              : MiniCssExtractPlugin.loader,
+            loader:
+              mode !== 'production'
+                ? 'style-loader'
+                : MiniCssExtractPlugin.loader,
           },
           { loader: 'css-loader', options: { modules: true } },
           { loader: 'sass-loader' },
