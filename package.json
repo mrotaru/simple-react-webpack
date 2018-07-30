@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.55",
     "babel-loader": "^8.0.0-beta.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -24,13 +24,13 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/preset-flow": "^7.0.0-beta.54",
-    "@babel/preset-react": "^7.0.0-beta.54",
-    "@babel/preset-typescript": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.55",
+    "@babel/preset-flow": "^7.0.0-beta.55",
+    "@babel/preset-react": "^7.0.0-beta.55",
+    "@babel/preset-typescript": "^7.0.0-beta.55",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^23.4.0",
+    "babel-jest": "^23.4.2",
     "css-loader": "^1.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -43,13 +43,13 @@
     "eslint-plugin-react": "^7.10.0",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.4.1",
+    "jest": "^23.4.2",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
     "react-test-renderer": "^16.4.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack": "^4.16.2",
+    "webpack": "^4.16.3",
     "webpack-command": "^0.4.1",
     "webpack-serve": "^2.0.2"
   }
