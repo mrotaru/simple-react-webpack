@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { UserContainer } from '../User'
 
 import style from './style.scss'
 
@@ -10,7 +11,7 @@ const UserPage = ({
 }) => {
   return (
     <div class={style.userDiv}>
-      <h1>{`User Page: ${userId}`}</h1>
+      <UserContainer userId={userId} />
       <Link to="/users"> >>Go to users page</Link>
     </div>
   )

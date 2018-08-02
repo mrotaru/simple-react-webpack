@@ -21,7 +21,8 @@
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.55",
@@ -46,7 +47,9 @@
     "jest": "^23.4.2",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
+    "react-proptypes": "^1.0.0",
     "react-test-renderer": "^16.4.1",
+    "redux-logger": "^3.0.6",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.3",
