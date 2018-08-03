@@ -4,8 +4,6 @@ import { Route } from 'react-router-dom'
 import UsersPage from './UsersPage'
 import UserPage from './UserPage'
 
-import { reducer } from './store'
-
 const routes = () => (
   <React.Fragment>
     <Route path="/users" component={UsersPage} exact />
@@ -13,4 +11,4 @@ const routes = () => (
   </React.Fragment>
 )
 
-export { reducer, routes }
+export { routes }
