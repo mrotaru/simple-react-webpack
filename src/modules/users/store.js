@@ -95,9 +95,9 @@ const fetchUsersFailure = payload => ({
   payload,
 })
 
-export const selectUsers = state => state.default.items
-export const selectUsersFetching = state => state.default.isFetching
-export const selectUsersError = state => state.default.error
+export const selectUsers = state => state.users.list.default.items
+export const selectUsersFetching = state => state.users.list.default.isFetching
+export const selectUsersError = state => state.users.list.default.error
 
 export const fetchUsers = () => async dispatch => {
   try {

@@ -1,11 +1,44 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import UsersList from './UsersList'
 import { Link } from 'react-router-dom'
 
-const UsersPage = () => (
-  <div>
-    <h1>Users Page</h1>
-    <Link to="/users/foo">Go to 'foo' user</Link>
-  </div>
-)
+import {
+  fetchUsers,
+  selectUsers,
+  selectUsersFetching,
+  selectUsersError,
+} from './store'
 
-export default UsersPage
+class UsersPage extends React.Component {
+  componentWillMount() {
+    this.props.fetchUsers()
+  }
+  render() {
+    const { loading, error, users } = this.props
+    return (
+      <div>
+        {loading && <div>Loading...</div>}
+        {error && <span>Error: {error}</span>}
+        {users.length && <UsersList users={users} />}
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    loading: selectUsersFetching(state),
+    users: selectUsers(state),
+    error: selectUsersError(state),
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  fetchUsers: () => dispatch(fetchUsers()),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(UsersPage)
