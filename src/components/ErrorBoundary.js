@@ -20,7 +20,7 @@ export default class ErrorBoundary extends React.Component {
         <div>
           <h1>Something went wrong.</h1>
           <pre>{this.state.error.toString()}</pre>
-          <pre>{this.state.info.toString()}</pre>
+          <pre>{this.state.info.componentStack.toString()}</pre>
         </div>
       )
     }

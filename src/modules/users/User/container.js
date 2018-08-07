@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
-import { fetchUser } from '../store'
+import { fetchUser, selectUser, selectUserIsFetching } from '../store'
 import User from './User'
 
 const mapStateToProps = (state, { userId }) => ({
-  user: state.users.userId,
+  userId,
+  user: selectUser(state, userId),
+  isLoading: selectUserIsFetching(state, userId),
 })
 
 const mapDispatchToProps = dispatch => ({

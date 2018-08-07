@@ -7,9 +7,13 @@ class User extends React.Component {
     fetchUser(userId)
   }
   render () {
+    const { isLoading, user } = this.props
+    if (typeof isLoading === 'undefined' || isLoading) {
+      return <h1>Loading...</h1>
+    }
     return (
       <div>
-        <h1>User {userId}</h1>
+        <h1>User: {user.name}</h1>
       </div>
     )
   }
