@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import UsersList from './UsersList'
-import { Link } from 'react-router-dom'
 
 import {
   fetchUsers,
@@ -11,7 +10,7 @@ import {
 } from './store'
 
 class UsersPage extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchUsers()
   }
   render() {

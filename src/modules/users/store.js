@@ -7,7 +7,7 @@ export const USER_FETCH_SUCCESS = 'USER_FETCH_SUCCESS'
 export const USER_FETCH_FAILURE = 'USER_FETCH_FAILURE'
 
 const userReducer = (state = {}, action) => {
-  const { type, payload, error, meta = {} } = action
+  const { type, payload, meta = {} } = action
   const { id = null } = meta
   if (!id) {
     return state
@@ -80,7 +80,7 @@ const usersReducer = (
   state = { default: { isFetching: false, items: [], error: null } },
   action,
 ) => {
-  const { type, payload, error, meta = {} } = action
+  const { type, payload = {} } = action
   switch (type) {
     case USERS_FETCH_START:
       return merge({}, state, {
