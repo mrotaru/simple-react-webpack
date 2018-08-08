@@ -9,7 +9,8 @@
     "test:watch": "jest --config=.jestrc.json -- watch",
     "lint": "eslint ./src",
     "dev": "webpack-serve --port=3000 --clipboard=false",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "precommit": "lint-staged"
   },
   "keywords": [],
   "author": "",
