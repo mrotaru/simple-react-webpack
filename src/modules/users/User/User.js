@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'react-proptypes'
 
 class User extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     const { fetchUser, userId } = this.props
     fetchUser(userId)
   }
