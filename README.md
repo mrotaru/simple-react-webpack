@@ -1,15 +1,21 @@
 # Simple React/Webpack
 
-Building an example React/Redux app from scratch
+Simple React/Redux app for trying out various things
 
 - minimal Webpack configuration - not finely tuned, but still production-ready
-- organise code into "module" folders by functionality area, not type
-- a module should only export routes and reducers; export other components only
-  if used in another module, althought that should be considered a code smell
+- organize code into "module" folders by functionality area, not type
 
-## TODO
+## TODO / TOTRY
 - themes with CSS - variables, color functions
 - puppeteer integration tests
 - entities
 - JWT authentication
 - redux-saga / observable
+- Open Graph
+- Google Analytics
+- `reselect`
+- css-in-js - is using styled-components justified ? vs `decss`
+
+References
+- https://github.com/facebook/create-react-app
+- https://github.com/focusaurus/express_code_structure
