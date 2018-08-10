@@ -4,10 +4,10 @@ import { Route } from 'react-router-dom'
 import UsersPage from './UsersPage'
 import UserPage from './UserPage'
 
-const routes = () => (
+const routes = ({ match }) => (
   <React.Fragment>
-    <Route path="/users" component={UsersPage} exact />
-    <Route path="/users/:userId" component={UserPage} />
+    <Route path={`${match.path}`} component={UsersPage} exact />
+    <Route path={`${match.path}/:userId`} component={UserPage} />
   </React.Fragment>
 )
 

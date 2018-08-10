@@ -21,7 +21,7 @@ class App extends React.Component {
             <BrowserRouter>
               <Switch>
                 <Route path="/" component={HomePage} exact />
-                <UsersRoutes />
+                <Route path="/users" component={UsersRoutes} />
                 <Route component={NotFoundPage} />
               </Switch>
             </BrowserRouter>
