@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const convert = require('koa-connect')
+const history = require('connect-history-api-fallback')
 
 const mode = process.env.WEBPACK_SERVE ? 'development' : 'production'
 
@@ -62,5 +64,6 @@ module.exports = {
   ],
   serve: {
     content: path.resolve(__dirname, 'dist'),
+    add: app => app.use(convert(history())),
   },
 }
