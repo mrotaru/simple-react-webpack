@@ -1,20 +1,32 @@
 # Simple React/Webpack
 
-Simple React/Redux app for trying out various things
+Simple React/Redux app for trying out various things. The idea is to have a
+'baseline' on the `master` branch, and try things on branches. These feature
+branches might not be merged into `master`. This is a similar idea to the the
+`arc` repository, which has Redux and Redux-SSR on different, parallel
+branches. Code is grouped by coupling, instead of type.
 
-- minimal Webpack configuration - not finely tuned, but still production-ready
-- organize code into "module" folders by functionality area, not type
+#### Styling
+- with SCSS (alt: `styled-components`, simple template strings, `decss`)
+- themes: 'light' and 'dark'; can be changed dynamically
+- buttons reacting to theme changes; derive from theme colors
 
-## TODO / TOTRY
-- themes with CSS - variables, color functions
-- puppeteer integration tests
-- entities
+#### State
+- management with Redux (alt: without)
+- async with `redux-thunk` (alt: `redux-promise`, `redux-observable`, `redux-saga`) 
+- try: `reselect`, `redux-entities`
+
+#### Build
+- minimal Webpack configuration
+
+#### Test
+- unit tests with Jest/Enzyme
+- integration tests: webdriverio (alt: `puppeteer`, `cypress`)
+
+#### TODO
 - JWT authentication
-- redux-saga / observable
 - Open Graph
 - Google Analytics
-- `reselect`
-- css-in-js - is using styled-components justified ? vs `decss`
 
 References
 - https://github.com/facebook/create-react-app
