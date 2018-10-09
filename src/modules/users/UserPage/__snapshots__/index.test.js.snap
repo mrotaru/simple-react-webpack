@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render a label 1`] = `
+<div
+  class="userDiv"
+>
+  <Connect(User)
+    userId="foo"
+  />
+  <Link
+    replace={false}
+    to="/users"
+  >
+     &gt;&gt;Go to users page
+  </Link>
+</div>
+`;
