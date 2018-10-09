@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import UsersList from './UsersList'
 
+import { fetchUsers } from './store/users.actions'
 import {
-  fetchUsers,
   selectUsers,
   selectUsersFetching,
   selectUsersError,
-} from './store'
+} from './store/users.selectors'
 
 class UsersPage extends React.Component {
   componentDidMount() {
