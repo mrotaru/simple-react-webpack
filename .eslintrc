@@ -1,8 +1,11 @@
 {
   "extends": "react-app",
-  "globals": {
-    "shallow": true,
-    "render": true,
-    "mount": true
-  }
+  "overrides": [{
+    "files": ["**/*.test.js"],
+    "globals": {
+      "shallow": true,
+      "render": true,
+      "mount": true
+    }
+  }]
 }
