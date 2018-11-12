@@ -1,5 +1,8 @@
 {
   "extends": "react-app",
+  "rules": {
+    "no-unused-vars": "error"
+  },
   "overrides": [{
     "files": ["**/*.test.js"],
     "globals": {
