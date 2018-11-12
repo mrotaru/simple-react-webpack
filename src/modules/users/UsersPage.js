@@ -25,7 +25,7 @@ class UsersPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     loading: selectUsersFetching(state),
     users: selectUsers(state),

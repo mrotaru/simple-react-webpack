@@ -6,7 +6,7 @@ import { combineReducers } from 'redux'
 import { reducer as UsersReducer } from './modules/users/store'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export default function configureStore(initialState = {}) {
+export default function configureStore() {
   return createStore(
     combineReducers({
       users: UsersReducer,
