@@ -35,19 +35,20 @@ const Api = {
     if (queryString.length) {
       finalUrl.search = queryString
     }
-    const fetchParams = {
-      method: finalMethod,
-      url: finalUrl.toString(),
-    }
+    const fetchParams = {}
     const finalHeaders = merge({}, this.config.headers, headers)
     if (payload) {
       fetchParams.body = JSON.stringify(payload)
     }
-    return await fetch({
+    return await fetch(finalUrl.toString(), {
       ...fetchParams,
+      method: finalMethod,
       headers: finalHeaders,
       ...rest,
-    })
+    }).then(response => response.ok
+      ? response.json()
+      : Promise.reject(`${response.status} ${response.statusText}`)
+    )
   },
 }
 

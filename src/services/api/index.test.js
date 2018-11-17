@@ -6,7 +6,7 @@ describe('api service', () => {
   beforeEach(() => {
     global.fetch = jest.fn(() => Promise.resolve({
       ok: true,
-      json: jest.fn(),
+      json: jest.fn(() => 'json'),
     }))
     api = Object.create(Api)
     api.setConfig({
@@ -16,11 +16,12 @@ describe('api service', () => {
 
   test('GET', async () => {
     expect(global.fetch).not.toBeCalled()
-    await api.request({ method: 'GET', endpoint: '/bar' })
-    expect(global.fetch.mock.calls[0]).toEqual([{
+    const json = await api.request({ method: 'GET', endpoint: '/bar' })
+    expect(global.fetch.mock.calls[0]).toEqual([
+      'https://foo.com/api/bar', {
       method: 'get',
-      url: 'https://foo.com/api/bar',
       headers: defaultHeaders,
     }])
+    expect(json).toEqual('json')
   })
 })
