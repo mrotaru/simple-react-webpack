@@ -1,4 +1,4 @@
-const Api = require('.')
+import Api, { defaultHeaders } from '.'
 
 describe('api service', () => {
   let api
@@ -8,7 +8,8 @@ describe('api service', () => {
       ok: true,
       json: jest.fn(),
     }))
-    api = Object.create(Api, {
+    api = Object.create(Api)
+    api.setConfig({
       baseUrl: 'https://foo.com/api'
     })
   })
@@ -16,11 +17,10 @@ describe('api service', () => {
   test('GET', async () => {
     expect(global.fetch).not.toBeCalled()
     await api.request({ method: 'GET', endpoint: '/bar' })
-    expect(global.fetch).toHaveBeenCalledWith(
-      'https://foo.com/api/bar',
-      expect.objectContaining({
-        method: 'get',
-      })
-    )
+    expect(global.fetch.mock.calls[0]).toEqual([{
+      method: 'get',
+      url: 'https://foo.com/api/bar',
+      headers: defaultHeaders,
+    }])
   })
 })
