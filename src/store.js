@@ -6,11 +6,14 @@ import { combineReducers } from 'redux'
 import { reducer as UsersReducer } from './modules/users/store'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export default function configureStore() {
+export default function configureStore(initialState, services = {}) {
   return createStore(
     combineReducers({
       users: UsersReducer,
     }),
-    composeEnhancers(applyMiddleware(thunk, reduxLogger)),
+    initialState,
+    composeEnhancers(
+      applyMiddleware(thunk.withExtraArgument(services), reduxLogger),
+    ),
   )
 }

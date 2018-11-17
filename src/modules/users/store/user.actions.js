@@ -21,12 +21,13 @@ export const fetchUserFailure = (userId, payload) => ({
   error: true,
 })
 
-export const fetchUser = userId => async dispatch => {
+export const fetchUser = userId => async (dispatch, getState, { api })  => {
   try {
     dispatch(fetchUserStart(userId))
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-    const responseBody = await response.json()
-    dispatch(fetchUserSuccess(userId, responseBody))
+    const response = await api.request({
+      endpoint: `/users/${userId}`
+    })
+    dispatch(fetchUserSuccess(userId, response))
   } catch (error) {
     dispatch(fetchUserFailure(userId, error))
   }

@@ -7,10 +7,13 @@ import NotFoundPage from './components/NotFoundPage'
 import ErrorBoundary from './components/ErrorBoundary'
 import { routes as UsersRoutes } from './modules/users'
 import configureStore from './store'
+import Api from './services/api'
 
 import style from './style.css'
 
-const store = configureStore()
+const api = Object.create(Api)
+api.setConfig({ baseUrl: 'https://jsonplaceholder.typicode.com' })
+const store = configureStore({}, { api })
 
 class App extends React.Component {
   render() {
