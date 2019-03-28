@@ -15,12 +15,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "lint-staged": {
-    "linters": {
-      "*.{js,jsx}": [
-        "eslint --no-ignore --fix",
-        "git add --force"
-      ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
     }
   },
   "dependencies": {
@@ -60,7 +58,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "koa-connect": "^2.0.1",
-    "lint-staged": "^8.0.4",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
     "react-proptypes": "^1.0.0",
