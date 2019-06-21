@@ -3,13 +3,13 @@ import thunk from 'redux-thunk'
 import reduxLogger from 'redux-logger'
 import { combineReducers } from 'redux'
 
-import { reducer as UsersReducer } from './modules/users/store'
+import PostsReducer from './modules/posts/reducer'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export default function configureStore(initialState, services = {}) {
   return createStore(
     combineReducers({
-      users: UsersReducer,
+      posts: PostsReducer,
     }),
     initialState,
     composeEnhancers(

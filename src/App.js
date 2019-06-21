@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import HomePage from './components/HomePage'
 import NotFoundPage from './components/NotFoundPage'
 import ErrorBoundary from './components/ErrorBoundary'
-import { routes as UsersRoutes } from './modules/users'
+import PostsRoutes from './modules/posts/routes'
 import configureStore from './store'
 import Api from './services/api'
 
@@ -24,7 +24,7 @@ class App extends React.Component {
             <BrowserRouter>
               <Switch>
                 <Route path="/" component={HomePage} exact />
-                <Route path="/users" component={UsersRoutes} />
+                <Route path="/posts" component={PostsRoutes} />
                 <Route component={NotFoundPage} />
               </Switch>
             </BrowserRouter>

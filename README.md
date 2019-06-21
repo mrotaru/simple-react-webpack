@@ -11,10 +11,11 @@ Code is organized into:
 ## Layout
 
 ```
-├─ src/components/    common components
+├─ src/components/     common components
 │  ├─ modules/        functionality modules
-│  │  └─ users /      users functionality module
+│  │  └─ posts/       posts functionality module
 │  ├─ services/       application services
-│  │  └─ api /        service for interacting with an HTTP API
+│  │  ├─ api/         service for interacting with an HTTP API
+│  │  └─ object/      service for manipulating objects
 └─ webpack.config.js   webpack config
 ```
