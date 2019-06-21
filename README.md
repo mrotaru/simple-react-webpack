@@ -3,7 +3,6 @@
 Code is organized into:
 - functionality modules, containing any code specific to the module
 - services and common components - used across different modules
-
 - minimal Webpack configuration
 - styling: - with SCSS
 - state management with Redux; async with `redux-thunk`
