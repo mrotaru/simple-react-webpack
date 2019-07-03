@@ -1,5 +1,5 @@
-const merge = (object1, object2) => {
-  return Object.assign(object1, object2)
+const merge = (object1, ...rest) => {
+  return Object.assign(object1, ...rest)
 }
 
 export {

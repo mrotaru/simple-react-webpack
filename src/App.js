@@ -21,6 +21,7 @@ class App extends React.Component {
       <ErrorBoundary>
         <Provider store={store}>
           <div class={style.main}>
+            <h2>Simple React/Redux Application</h2>
             <BrowserRouter>
               <Switch>
                 <Route path="/" component={HomePage} exact />
